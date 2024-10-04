@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import io
 
-url = 'https://github.com/Lixir81/CSS145/blob/main/LaptopPrice.csv'
+url = 'https://raw.githubusercontent.com/Lixir81/CSS145/refs/heads/main/LaptopPrice.csv'
 df = pd.read_csv(url)
 st.title("Laptop Prices Data Analysis")
 
