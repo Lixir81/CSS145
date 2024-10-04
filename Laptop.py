@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import io
 
-df = pd.read_csv(r'C:\Users\PC-User\CSS145\LaptopPrice.csv')
+url = 'https://github.com/Lixir81/CSS145/blob/main/LaptopPrice.csv'
+df = pd.read_csv(url)
 st.title("Laptop Prices Data Analysis")
 
 st.write("Group 2")
