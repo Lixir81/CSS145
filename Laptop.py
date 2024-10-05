@@ -63,3 +63,4 @@ st.markdown("Average Laptop Price Per Company Bar Chart")
 st.write("This Bar Graph shows the Average Laptop Price per company. In this graph it shows that Razer has the highest average laptop price out of all the companies. With an average price of 3346.14 Euros. While the other companies usually play arounud the 1000-2000 Euro Range. While the lowest average price came from the Vero Company with an average price of 217.43 Euros.")
 company_avg_price
 
+
