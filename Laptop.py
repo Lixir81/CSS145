@@ -92,3 +92,23 @@ st.markdown("Count of Laptop Models by Company Bar Chart")
 
 st.write("The bar graph shows the number of laptop models offered by each company. The result reveals that Dell has the highest number with 291 models, closely followed by Lenovo with 289 models. HP offers 268 models, while Asus and Acer have 152 and 101 models, respectively. On the other hand, several companies have significantly fewer models, with Apple at 21, Samsung at 9, and brands like Razer and Mediacom having 7 models. Notably, companies like Chuwi, Google, Fujitsu, LG each have only 3 models with Huawei being the company with the lowest laptop model count at 2.")
 company_model_count
+
+plt.figure(figsize = (10, 10))
+plt.title('GPU Brand Chart')
+plt.pie(df['GPU_Company'].value_counts(), labels = df['GPU_Company'].value_counts().index, autopct = '%1.2f%%')
+plt.show()
+st.markdown("GPU Brand Percentage Chart")
+
+st.write("The chart shows various GPUs that are utilised by the laptops. As it shows, most of them use Intel - most likely CPU-integrated graphics - with a share of 55.22%. When it comes to dedicated graphics cards, Nvidia takes the lead at 31%, with AMD coming in at second (third overall) with 13.65%. ARM comes in at last with 0.8%.")
+
+ram_per_laptop = df.groupby('TypeName')['RAM (GB)'].mean()
+
+plt.figure(figsize = (15, 15))
+plt.title('RAM Size by Laptop Type Chart')
+plt.bar(ram_per_laptop.index, ram_per_laptop.values)
+plt.xlabel('Laptop Type')
+plt.ylabel('RAM Size')
+plt.show()
+st.markdown("Average RAM Size per Laptop Type Chart")
+
+st.write("The bar graph shows the average RAM size per type of Laptop. Gaming laptops have the most; Workstations come in at second; Ultrabooks at third; 2-in-1 Convertibles at fourth; Notebooks at fifth; and Netbooks at sixth. This shows the peformance and the workload these types of laptops typically and can do.")
