@@ -113,3 +113,23 @@ st.markdown("Average RAM Size per Laptop Type Chart")
 
 st.write("The bar graph shows the average RAM size per type of Laptop. Gaming laptops have the most; Workstations come in at second; Ultrabooks at third; 2-in-1 Convertibles at fourth; Notebooks at fifth; and Netbooks at sixth. This shows the peformance and the workload these types of laptops typically and can do.")
 ram_per_laptop
+
+type_avg_price = df.groupby('TypeName')['Price (Euro)'].mean()
+plt.figure(figsize=(15, 5))
+plt.bar(type_avg_price.index, type_avg_price.values)
+plt.title('Average Laptop Price by Type')
+plt.xlabel('Laptop Type')
+plt.ylabel('Average Price (Euros)')
+plt.xticks(rotation=90)
+plt.show()
+type_avg_price
+
+st.write("This bar graph shows the average price for each type of laptop. The graph shows that on average, Workstation Laptops are the most expensive at an aveage price of 2280.35 Euros. On the flip side, the cheapest type of laptop according to the data are Netbook type laptops which on average cost around 673.38 Euros.")
+
+df.OpSys.value_counts()
+plt.figure(figsize=(10, 10))
+plt.pie(df['OpSys'].value_counts(), labels=df['OpSys'].value_counts().index, autopct='%1.1f%%')
+plt.title('Operating System Distribution Pie Chart')
+plt.show()
+
+st.write ("This pie graph shows the distribution of operating systems among the laptops. It shows that the most prevalent operating system is Windows 10 which is the operating system for 82.2% of the laptops in the graph. Meanwhile the least popular operating system is android which is used by 0.2% of the laptops in the graph")
