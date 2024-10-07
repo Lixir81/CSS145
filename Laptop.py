@@ -63,4 +63,32 @@ st.markdown("Average Laptop Price Per Company Bar Chart")
 st.write("This Bar Graph shows the Average Laptop Price per company. In this graph it shows that Razer has the highest average laptop price out of all the companies. With an average price of 3346.14 Euros. While the other companies usually play arounud the 1000-2000 Euro Range. While the lowest average price came from the Vero Company with an average price of 217.43 Euros.")
 company_avg_price
 
+average_weight = df.groupby('TypeName')['Weight (kg)'].mean().reset_index()
+average_weight.index = range(1, len(average_weight) + 1)
+plt.figure(figsize=(12, 6))
+sns.barplot(x='TypeName', y='Weight (kg)', data=average_weight)
+plt.title('Average Weight of Laptops by TypeName')
+plt.xlabel('TypeName')
+plt.ylabel('Average Weight (kg)')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+st.pyplot(plt)
+plt.clf()
+st.markdown("Average Weight of Laptops by TypeName Bar Chart")
 
+st.write("The bar chart illustrates the average weight of laptops categorized by their type. From the results, Gaming laptops are the heaviest on average at approximately 2.95 kg, while Netbooks are the lightest at about 1.32 kg. Quite similar to Netbooks,Ultrabooks has a relatively low average weight of 1.34 kg. In contrast, Notebooks weigh around 2.06 kg, and Workstations are slightly heavier at 2.47 kg. Lastly,the 2 in 1 Convertible laptops average about 1.55 kg.")
+average_weight
+
+company_model_count = df['Company'].value_counts()
+plt.figure(figsize=(10, 6))
+sns.countplot(data=df, x='Company', order=company_model_count.index)
+plt.title('Count of Laptop Models by Company')
+plt.xticks(rotation=45)
+plt.ylabel('Number of Models')
+plt.xlabel('Company')
+st.pyplot(plt)
+plt.clf()
+st.markdown("Count of Laptop Models by Company Bar Chart")
+
+st.write("The bar graph shows the number of laptop models offered by each company. The result reveals that Dell has the highest number with 291 models, closely followed by Lenovo with 289 models. HP offers 268 models, while Asus and Acer have 152 and 101 models, respectively. On the other hand, several companies have significantly fewer models, with Apple at 21, Samsung at 9, and brands like Razer and Mediacom having 7 models. Notably, companies like Chuwi, Google, Fujitsu, LG each have only 3 models with Huawei being the company with the lowest laptop model count at 2.")
+company_model_count
