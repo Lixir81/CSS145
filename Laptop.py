@@ -124,7 +124,7 @@ plt.xlabel('Laptop Type')
 plt.ylabel('Average Price (Euros)')
 plt.xticks(rotation=90)
 st.pyplot(plt)
-plt.clf()
+plt.clr()
 type_avg_price
 
 st.write("This bar graph shows the average price for each type of laptop. The graph shows that on average, Workstation Laptops are the most expensive at an aveage price of 2280.35 Euros. On the flip side, the cheapest type of laptop according to the data are Netbook type laptops which on average cost around 673.38 Euros.")
