@@ -123,7 +123,7 @@ plt.title('Average Laptop Price by Type')
 plt.xlabel('Laptop Type')
 plt.ylabel('Average Price (Euros)')
 plt.xticks(rotation=90)
-plt.show()
+st.pyplot(plt)
 plt.clf()
 type_avg_price
 
@@ -133,7 +133,7 @@ df.OpSys.value_counts()
 plt.figure(figsize=(10, 10))
 plt.pie(df['OpSys'].value_counts(), labels=df['OpSys'].value_counts().index, autopct='%1.1f%%')
 plt.title('Operating System Distribution Pie Chart')
-plt.show()
+st.pyplot(plt)
 plt.clf()
 
 st.write ("This pie graph shows the distribution of operating systems among the laptops. It shows that the most prevalent operating system is Windows 10 which is the operating system for 82.2% of the laptops in the graph. Meanwhile the least popular operating system is android which is used by 0.2% of the laptops in the graph")
