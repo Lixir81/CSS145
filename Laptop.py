@@ -112,3 +112,4 @@ plt.show()
 st.markdown("Average RAM Size per Laptop Type Chart")
 
 st.write("The bar graph shows the average RAM size per type of Laptop. Gaming laptops have the most; Workstations come in at second; Ultrabooks at third; 2-in-1 Convertibles at fourth; Notebooks at fifth; and Netbooks at sixth. This shows the peformance and the workload these types of laptops typically and can do.")
+ram_per_laptop
